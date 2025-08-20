@@ -1,0 +1,10 @@
+.ant-table
+  .ant-table-container
+  .ant-table-content
+  table
+  thead.ant-table-thead
+  .ant-table-cell {
+  background-color: #006d5b;
+  color: white;
+  opacity: 0.95;
+}
