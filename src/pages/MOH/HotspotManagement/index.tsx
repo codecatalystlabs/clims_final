@@ -103,7 +103,7 @@ const [filteredInfo, setFilteredInfo] = useState();
   const handleEdit = async () => {
     try {
       const res = await axios.put(
-        `http://localhost:8000/api/hotSpots/${id}`,
+        `https://clims.health.go.ug/api/hotSpots/${id}`,
         {
           name: hotspot_name,
           contact_person_name,

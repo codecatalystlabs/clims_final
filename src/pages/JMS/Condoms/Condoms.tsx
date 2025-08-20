@@ -130,7 +130,7 @@ const CondomJMS = () => {
   const handleEditCondomItem = async (id: any) => {
     try {
       const res = await axios.put(
-        `http://localhost:8000/api/condoms/${id}`,
+        `https://clims.health.go.ug/api/condoms/${id}`,
         {
           category: category,
           brand: brand,

@@ -136,7 +136,7 @@ const Rep = () => {
   const handleEditUser = async () => {
     try {
       const res = await axios.put(
-        `http://localhost:8000/api/users/${id}`,
+        `https://clims.health.go.ug/api/users/${id}`,
         {
           username,
           firstname,

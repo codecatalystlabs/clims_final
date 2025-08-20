@@ -152,7 +152,7 @@ const Distributions = () => {
   // const getDistricts = async (uid: any) => {
   //   try {
   //     const response = await axios.get(
-  //       `http://localhost:8000/api/districts/${uid}`
+  //       `https://clims.health.go.ug/api/districts/${uid}`
   //     );
   //     console.log(response, '$$$$$$$$');
   //   } catch (error) {

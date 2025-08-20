@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: 'http://localhost:8000/api',
+  baseURL: 'https://clims.health.go.ug/api',
 });
 
 apiClient.defaults.headers.post['Content-Type'] = 'application/json';

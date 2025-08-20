@@ -84,7 +84,7 @@ const AdminDashboardADMIN = () => {
   const getRegions = async () => {
     try {
       const { data } = await axios.get(
-        'http://localhost:8000/api/regions'
+        'https://clims.health.go.ug/api/regions'
       );
       setRegions(data);
     } catch (error) {
@@ -95,7 +95,7 @@ const AdminDashboardADMIN = () => {
   const getCounties = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8000/api/subCounties/${district}`
+        `https://clims.health.go.ug/api/subCounties/${district}`
       );
       setCounties(data);
     } catch (error) {
@@ -106,7 +106,7 @@ const AdminDashboardADMIN = () => {
   const getDistricts = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8000/api/districts/${region}`
+        `https://clims.health.go.ug/api/districts/${region}`
       );
       setDistricts(data);
     } catch (error) {
@@ -117,7 +117,7 @@ const AdminDashboardADMIN = () => {
   const getFacilities = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8000/api/healthCenters/${subCounty}`
+        `https://clims.health.go.ug/api/healthCenters/${subCounty}`
       );
       setFacilities(data);
     } catch (error) {
@@ -195,7 +195,7 @@ const AdminDashboardADMIN = () => {
   const handleEditUser = async () => {
     try {
       const res = await axios.put(
-        `http://localhost:8000/api/users/${id}`,
+        `https://clims.health.go.ug/api/users/${id}`,
         {
           username,
           firstname,

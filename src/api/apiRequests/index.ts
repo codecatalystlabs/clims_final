@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:8000/api';
+const baseURL = 'https://clims.health.go.ug/api';
 
 interface loginData {
   username: string;

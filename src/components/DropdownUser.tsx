@@ -46,7 +46,7 @@ const DropdownUser = () => {
   const handleLogout = async () => {
     try {
       const response = await axios.post(
-        'http://localhost:8000/api/logout',
+        'https://clims.health.go.ug/api/logout',
         {},
         {
           headers: {
