@@ -17,6 +17,7 @@ import CustomSelect from '../../common/select';
 import CondomItemDataTable from '../../components/CondomItem';
 import { cancelEdit } from '../../redux/slices/condom';
 import axios from 'axios';
+import { API_BASE_URL } from '../../api/config';
 import { TbTruckDelivery } from 'react-icons/tb';
 import { MdOutlineLocalGroceryStore } from 'react-icons/md';
 
@@ -116,7 +117,7 @@ const DeliveryHome = () => {
   const handleEditCondomItem = async () => {
     try {
       const res = await axios.put(
-        `https://clims.health.go.ug/api/condoms/${id}`,
+        `${API_BASE_URL}/condoms/${id}`,
         {
           category: category,
           brand: brand,

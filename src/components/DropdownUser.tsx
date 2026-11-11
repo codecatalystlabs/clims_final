@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
+import { API_BASE_URL } from '../api/config';
 import { displayErrorMessage, displaySuccessMessage } from './toast/Toast';
 import { CgProfile } from 'react-icons/cg';
 
@@ -46,7 +47,7 @@ const DropdownUser = () => {
   const handleLogout = async () => {
     try {
       const response = await axios.post(
-        'https://clims.health.go.ug/api/logout',
+        `${API_BASE_URL}/logout`,
         {},
         {
           headers: {
@@ -64,9 +65,11 @@ const DropdownUser = () => {
     } catch (error: any) {
       if (error.response && error.response.status === 401) {
         // Unauthorized error handling
+        localStorage.removeItem('userData');
         displayErrorMessage(
           'Invalid token or session expired. Please log in again.'
         );
+        navigate('/');
       } else {
         // Other error handling
         displayErrorMessage('Logout failed. Please try again.');

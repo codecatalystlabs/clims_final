@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-const baseURL = 'https://clims.health.go.ug/api';
+import { API_BASE_URL as baseURL } from '../config';
 
 interface loginData {
   username: string;
@@ -272,7 +271,7 @@ const getInventory = async (id: string) => {
 
 const getReceivedOrders = async (id: string) => {
   const res = await axios
-    .get(`${baseURL}/orders/ordersAtOrganization?ordered_to=${id}`);
+    .get(`${baseURL}/orders/ordersAtOrganization/${id}`);
   return res.data;
 };
 const getReceivedOrder = async (id: any) => {

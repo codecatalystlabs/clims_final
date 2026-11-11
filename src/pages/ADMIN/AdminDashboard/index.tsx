@@ -18,6 +18,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { cancelEdit } from '../../../redux/slices/condom';
 import axios from 'axios';
+import { API_BASE_URL } from '../../../api/config';
 import UserTable from '../../../components/Table/userTable';
 import { trimLastWord } from '../../../utils/trim';
 const AdminDashboardADMIN = () => {
@@ -84,7 +85,7 @@ const AdminDashboardADMIN = () => {
   const getRegions = async () => {
     try {
       const { data } = await axios.get(
-        'https://clims.health.go.ug/api/regions'
+        `${API_BASE_URL}/regions`
       );
       setRegions(data);
     } catch (error) {
@@ -95,7 +96,7 @@ const AdminDashboardADMIN = () => {
   const getCounties = async () => {
     try {
       const { data } = await axios.get(
-        `https://clims.health.go.ug/api/subCounties/${district}`
+        `${API_BASE_URL}/subCounties/${district}`
       );
       setCounties(data);
     } catch (error) {
@@ -106,7 +107,7 @@ const AdminDashboardADMIN = () => {
   const getDistricts = async () => {
     try {
       const { data } = await axios.get(
-        `https://clims.health.go.ug/api/districts/${region}`
+        `${API_BASE_URL}/districts/${region}`
       );
       setDistricts(data);
     } catch (error) {
@@ -117,7 +118,7 @@ const AdminDashboardADMIN = () => {
   const getFacilities = async () => {
     try {
       const { data } = await axios.get(
-        `https://clims.health.go.ug/api/healthCenters/${subCounty}`
+        `${API_BASE_URL}/healthCenters/${subCounty}`
       );
       setFacilities(data);
     } catch (error) {
@@ -195,7 +196,7 @@ const AdminDashboardADMIN = () => {
   const handleEditUser = async () => {
     try {
       const res = await axios.put(
-        `https://clims.health.go.ug/api/users/${id}`,
+        `${API_BASE_URL}/users/${id}`,
         {
           username,
           firstname,

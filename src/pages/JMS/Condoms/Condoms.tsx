@@ -23,6 +23,7 @@ import CustomSelect from '../../../common/select';
 import CondomItemDataTable from '../../../components/CondomItem';
 import { cancelEdit } from '../../../redux/slices/condom';
 import axios from 'axios';
+import { API_BASE_URL } from '../../../api/config';
 
 const CondomJMS = () => {
   const dispatch = useDispatch();
@@ -130,7 +131,7 @@ const CondomJMS = () => {
   const handleEditCondomItem = async (id: any) => {
     try {
       const res = await axios.put(
-        `https://clims.health.go.ug/api/condoms/${id}`,
+        `${API_BASE_URL}/condoms/${id}`,
         {
           category: category,
           brand: brand,

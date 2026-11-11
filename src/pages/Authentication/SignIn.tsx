@@ -30,15 +30,19 @@ const SignIn = () => {
   const queryClient = useQueryClient();
   const createPostMutation = useMutation({
     mutationFn: loginUser,
+    onError: () => {
+      displayErrorMessage('Unable to reach the server. Please try again.');
+    },
     onSuccess: (data) => {
       queryClient.setQueryData(['login'], data);
       queryClient.invalidateQueries(['login'], { exact: true });
+      if (data.code != '200') {
+        displayErrorMessage(`${data.message}`);
+        return;
+      }
       localStorage.setItem('role', data.user.role);
       localStorage.setItem('location', data.user.location);
       localStorage.setItem('id', data.user.id);
-      if (data.code == '401') {
-        displayErrorMessage(`${data.message}`);
-      }
       if (data.code == '200' && data.user.role === 'hotspot manager') {
         navigate('/focaldashboardh');
         const userData = {

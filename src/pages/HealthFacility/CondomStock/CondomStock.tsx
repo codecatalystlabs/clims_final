@@ -49,7 +49,6 @@ import HotspotStock from '../../../components/HotspotStock';
 import CondomUsageChart from '../../../components/CondomUsage';
 import CondomUsed from '../../../components/CondomUsed';
 
-const baseURL = 'https://clims.health.go.ug/api';
 const { TabPane } = Tabs;
 
 const CondomStock = () => {

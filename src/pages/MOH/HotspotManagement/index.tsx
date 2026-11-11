@@ -15,6 +15,7 @@ import {
 import HotspotDataTable from '../../../components/HotspotTable';
 import { cancelEdit } from '../../../redux/slices/condom';
 import axios from 'axios';
+import { API_BASE_URL } from '../../../api/config';
 import useLocalStorage from '../../../hooks/useLocalStorage';
 import { trimLastWord } from '../../../utils/trim';
 import * as XLSX from 'xlsx';
@@ -103,7 +104,7 @@ const [filteredInfo, setFilteredInfo] = useState();
   const handleEdit = async () => {
     try {
       const res = await axios.put(
-        `https://clims.health.go.ug/api/hotSpots/${id}`,
+        `${API_BASE_URL}/hotSpots/${id}`,
         {
           name: hotspot_name,
           contact_person_name,

@@ -18,6 +18,7 @@ import CondomItemDataTable from '../../../components/CondomItem';
 import { cancelEdit } from '../../../redux/slices/condom';
 import RecordTable from './RecordTable';
 import axios from 'axios';
+import { API_BASE_URL } from '../../../api/config';
 
 const RecordTextOther = () => {
   const dispatch = useDispatch();
@@ -115,7 +116,7 @@ const RecordTextOther = () => {
   const handleEditCondomItem = async () => {
     try {
       const res = await axios.put(
-        `https://clims.health.go.ug/api/condoms/${id}`,
+        `${API_BASE_URL}/condoms/${id}`,
         {
           category: category,
           brand: brand,

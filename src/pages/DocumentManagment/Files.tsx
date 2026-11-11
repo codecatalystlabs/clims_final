@@ -2,8 +2,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import FileCard from '../../components/FileCard';
-
-const baseURL = 'http://localhost/clims_backend/clims/public';
+import { BACKEND_URL as baseURL } from '../../api/config';
 
 export default function Files() {
   const location = useLocation();

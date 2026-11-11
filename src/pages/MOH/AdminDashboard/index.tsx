@@ -16,6 +16,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { cancelEdit } from '../../../redux/slices/condom';
 import axios from 'axios';
+import { API_BASE_URL } from '../../../api/config';
 import UserTable from '../../../components/Table/userTable';
 const AdminDashboard = () => {
   const [size, setSize] = useState<SizeType>('large'); // default is 'middle'
@@ -136,7 +137,7 @@ const AdminDashboard = () => {
   const handleEditUser = async () => {
     try {
       const res = await axios.put(
-        `https://clims.health.go.ug/api/users/${id}`,
+        `${API_BASE_URL}/users/${id}`,
         {
           username,
           firstname,
